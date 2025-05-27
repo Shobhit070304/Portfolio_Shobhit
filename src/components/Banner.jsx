@@ -6,7 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { Link } from "react-scroll";
-import Resume from "../assets/Shobhit_Resume.pdf";
+import Resume from "../assets/Resume_Shobhit.pdf";
 
 const Banner = () => {
   return (
@@ -64,7 +64,11 @@ const Banner = () => {
               <Link to="contact">
                 <button className="btn btn-lg">Contact me</button>
               </Link>
-              <a href={Resume} className="text-gradient btn-link" download="My_Resume.pdf">
+              <a
+                href={Resume}
+                className="text-gradient btn-link"
+                download="My_Resume.pdf"
+              >
                 My Resume
               </a>
             </motion.div>

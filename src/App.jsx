@@ -8,12 +8,14 @@ import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import LocomotiveScroll from "locomotive-scroll";
+import Background from "./components/Background";
 
 const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
 
   return (
-    <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
+    <div className="overflow-hidden">
+      <Background />
       <Header />
       <Banner />
       <Nav />

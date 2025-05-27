@@ -22,8 +22,8 @@ const Work = () => {
             </div>
           </motion.div>
 
-          <motion.div className="flex-1 flex flex-col lg:flex-row justify-center items-center gap-x-4 mb-8 flex-wrap gap-y-4">
-            <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-80 p-2 bg-[#171721] backdrop-blur-2xl bg-opacity-50">
+          <motion.div className="flex-1 flex flex-col lg:flex-row justify-center items-center gap-x-4 mb-8 flex-wrap gap-y-4 ">
+            <div className="group relative overflow-hidden border-2 min-h-80  border-white/50 rounded-xl w-80 p-4 bg-[#171721] backdrop-blur-2xl bg-opacity-50 hover:scale-105 transition-transform duration-300">
               <div className="overflow-hidden">
                 <img
                   src={Img1}
@@ -34,8 +34,8 @@ const Work = () => {
               <div className="  mt-2 flex flex-col gap-y-2 px-2 py-2">
                 <h1 className="text-white text-2xl w-full">Wanderlust</h1>
                 <p className="text-sm text-zinc-400">
-                  Wanderlust: A hotel discovery and review platform for
-                  travelers seeking the perfect stay.
+                  A hotel discovery and review platform for travelers seeking
+                  the perfect stay.
                 </p>
                 <div className="flex gap-x-4 text-blue-400 text-base w-full">
                   <a
@@ -44,14 +44,17 @@ const Work = () => {
                   >
                     Github
                   </a>
-                  <a className="hover:text-blue-100 cursor-pointer">
+                  <a
+                    href="https://github.com/Shobhit070304/major-project"
+                    className="hover:text-blue-100 cursor-pointer"
+                  >
                     Live Demo
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-80 p-2 bg-[#171721] backdrop-blur-2xl bg-opacity-50">
+            <div className="group relative overflow-hidden border-2 min-h-80  border-white/50 rounded-xl w-80 p-4 bg-[#171721] backdrop-blur-2xl bg-opacity-50 hover:scale-105 transition-transform duration-300">
               <div className="overflow-hidden">
                 <img
                   src={Img3}
@@ -60,26 +63,29 @@ const Work = () => {
                 />
               </div>
               <div className="  mt-2 flex flex-col gap-y-2 px-2 py-2">
-                <h1 className="text-white text-2xl w-full">Expense Tracker</h1>
+                <h1 className="text-white text-2xl w-full">NoteTube</h1>
                 <p className="text-sm text-zinc-400">
-                  Simple tool to track and manage personal expenses with ease
-                  and accuracy.
+                  Summarizes YouTube videos and Notes using AI and get instant
+                  smart Pdf notes.
                 </p>
                 <div className="flex gap-x-4 text-blue-400 text-base w-full">
                   <a
-                    href="https://github.com/Shobhit070304/Expence-Tracker"
+                    href="https://github.com/Shobhit070304/NoteTube"
                     className="hover:text-blue-100 cursor-pointer"
                   >
                     Github
                   </a>
-                  <a className="hover:text-blue-100 cursor-pointer">
+                  <a
+                    href="https://notetube-ten.vercel.app/"
+                    className="hover:text-blue-100 cursor-pointer"
+                  >
                     Live Demo
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-80 p-2 bg-[#171721] backdrop-blur-2xl bg-opacity-50">
+            <div className="group relative overflow-hidden border-2 min-h-80 border-white/50 rounded-xl w-80 p-4 bg-[#171721] backdrop-blur-3xl bg-opacity-50 hover:scale-105 transition-transform duration-300">
               <div className="overflow-hidden">
                 <img
                   src={Img2}
@@ -88,19 +94,22 @@ const Work = () => {
                 />
               </div>
               <div className="  mt-2 flex flex-col gap-y-2 px-2 py-2">
-                <h1 className="text-white text-2xl w-full">Notes App</h1>
+                <h1 className="text-white text-2xl w-full">Linkly</h1>
                 <p className="text-sm text-zinc-400">
-                  Organize and access your notes seamlessly with a
-                  user-friendly, secure application.
+                  Tool to shorten or lengthen URLs with support for custom
+                  aliases and easy link management.
                 </p>
                 <div className="flex gap-x-4 text-blue-400 text-base w-full">
                   <a
-                    href="https://github.com/Shobhit070304/Notes-app"
+                    href="https://github.com/Shobhit070304/Linkly"
                     className="hover:text-blue-100 cursor-pointer"
                   >
                     Github
                   </a>
-                  <a className="hover:text-blue-100 cursor-pointer">
+                  <a
+                    href="https://linkly-orcin.vercel.app"
+                    className="hover:text-blue-100 cursor-pointer"
+                  >
                     Live Demo
                   </a>
                 </div>

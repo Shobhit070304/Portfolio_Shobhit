@@ -30,16 +30,19 @@ const About = () => {
           >
             <h2 className="h2 text-accent ">About me.</h2>
             <h3 className="h3 mb-4">
-              Passionate about creating and solving problems through technology.
+              Passionate about building and solving with technology.
             </h3>
             <p className="mb-6">
-              👋 Hi, I’m Shobhit! A 4th-year CS student passionate about
-              learning, building, and innovating in web development. I thrive on
-              turning ideas into reality through clean, efficient code while
-              constantly exploring new technologies. With every challenge, I
-              refine my skills, apply my knowledge, and push boundaries to
-              create impactful solutions. Always eager to grow and
-              collaborate—let’s build something amazing! 🚀
+              👋 Hi, I’m Shobhit, a final-year CS student driven by curiosity
+              and a love for creating. I’m constantly learning, growing, and
+              adapting—whether it’s building web apps, solving complex problems,
+              or exploring new technologies. I enjoy the process as much as the
+              result, and I believe in clean code, big ideas, and consistent
+              effort. Beyond the screen, you’ll find me chatting, walking,
+              gaming, or just enjoying life’s simple moments. I bring energy,
+              creativity, and joy into everything I do—whether it’s coding a new
+              feature or collaborating with a team. Let’s connect and create
+              something impactful, and fun, together! 🚀
             </p>
           </motion.div>
         </div>
