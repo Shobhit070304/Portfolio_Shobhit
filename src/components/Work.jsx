@@ -26,38 +26,7 @@ const Work = () => {
             <div className="group relative overflow-hidden border-2 min-h-80  border-white/50 rounded-xl w-80 p-4 bg-[#171721] backdrop-blur-2xl bg-opacity-50 hover:scale-105 transition-transform duration-300">
               <div className="overflow-hidden">
                 <img
-                  src={Img1}
-                  className="hover:scale-125 cursor-pointer transition-all duration-300 rounded-md"
-                  alt=""
-                />
-              </div>
-              <div className="  mt-2 flex flex-col gap-y-2 px-2 py-2">
-                <h1 className="text-white text-2xl w-full">Wanderlust</h1>
-                <p className="text-sm text-zinc-400">
-                  A hotel discovery and review platform for travelers seeking
-                  the perfect stay.
-                </p>
-                <div className="flex gap-x-4 text-blue-400 text-base w-full">
-                  <a
-                    href="https://github.com/Shobhit070304/major-project"
-                    className="hover:text-blue-100 cursor-pointer"
-                  >
-                    Github
-                  </a>
-                  <a
-                    href="https://github.com/Shobhit070304/major-project"
-                    className="hover:text-blue-100 cursor-pointer"
-                  >
-                    Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden border-2 min-h-80  border-white/50 rounded-xl w-80 p-4 bg-[#171721] backdrop-blur-2xl bg-opacity-50 hover:scale-105 transition-transform duration-300">
-              <div className="overflow-hidden">
-                <img
-                  src={Img3}
+                  src={Img2}
                   className="hover:scale-125 cursor-pointer transition-all duration-300 rounded-md"
                   alt=""
                 />
@@ -88,7 +57,7 @@ const Work = () => {
             <div className="group relative overflow-hidden border-2 min-h-80 border-white/50 rounded-xl w-80 p-4 bg-[#171721] backdrop-blur-3xl bg-opacity-50 hover:scale-105 transition-transform duration-300">
               <div className="overflow-hidden">
                 <img
-                  src={Img2}
+                  src={Img3}
                   className="hover:scale-125 cursor-pointer transition-all duration-300 rounded-md"
                   alt=""
                 />
@@ -108,6 +77,36 @@ const Work = () => {
                   </a>
                   <a
                     href="https://linkly-orcin.vercel.app"
+                    className="hover:text-blue-100 cursor-pointer"
+                  >
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden border-2 min-h-80  border-white/50 rounded-xl w-80 p-4 bg-[#171721] backdrop-blur-2xl bg-opacity-50 hover:scale-105 transition-transform duration-300">
+              <div className="overflow-hidden">
+                <img
+                  src={Img1}
+                  className="hover:scale-125 cursor-pointer transition-all duration-300 rounded-md"
+                  alt=""
+                />
+              </div>
+              <div className="  mt-2 flex flex-col gap-y-2 px-2 py-2">
+                <h1 className="text-white text-2xl w-full">Wanderlust</h1>
+                <p className="text-sm text-zinc-400">
+                  A hotel discovery and review platform for travelers seeking
+                  the perfect stay.
+                </p>
+                <div className="flex gap-x-4 text-blue-400 text-base w-full">
+                  <a
+                    href="https://github.com/Shobhit070304/major-project"
+                    className="hover:text-blue-100 cursor-pointer"
+                  >
+                    Github
+                  </a>
+                  <a
+                    href="https://github.com/Shobhit070304/major-project"
                     className="hover:text-blue-100 cursor-pointer"
                   >
                     Live Demo
