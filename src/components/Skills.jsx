@@ -18,7 +18,7 @@ const Skills = () => {
         </h3>
         <div className="skills pt-2 lg:pt-10 flex flex-col lg:flex-row gap-x-8 justify-between items-center gap-y-6 lg:gap-y-0">
           {/* Frontend */}
-          <div className="border-purple-900 lg:w-[35%] px-1 py-4 lg:px-4 lg:py-6 backdrop-blur-lg bg-opacity-20 bg-white text-center rounded-xl shadow-purple-400 shadow-md">
+          <div className="border-purple-900 lg:w-[35%] px-1 py-4 lg:px-4 lg:py-6 backdrop-blur-lg bg-opacity-20 bg-white text-center rounded-xl shadow-purple-400 shadow-md hover:scale-105 transition-transform duration-300">
             <h1 className="text-2xl lg:text-4xl font-semibold ">Frontend</h1>
             <div className="px-1 py-2 lg:px-2 lg:py-4 flex items-center justify-center text-center flex-wrap gap-x-2 gap-y-2 lg:gap-x-3 lg:gap-y-3 ">
               {frontend.map((item, index) => (
@@ -36,7 +36,7 @@ const Skills = () => {
           </div>
           {/* Backend */}
           {/* h-[355px] */}
-          <div className="border-purple-900 lg:w-[35%] px-1 py-2 lg:h-[355px] lg:px-4 lg:py-6 backdrop-blur-lg bg-opacity-20 bg-white text-center rounded-xl shadow-purple-400 shadow-md">
+          <div className="border-purple-900 lg:w-[35%] px-1 py-2 lg:h-[355px] lg:px-4 lg:py-6 backdrop-blur-lg bg-opacity-20 bg-white text-center rounded-xl shadow-purple-400 shadow-md hover:scale-105 transition-transform duration-300  ">
             <h1 className="text-2xl lg:text-4xl font-semibold ">Backend</h1>
             <div className="px-1 py-2 lg:px-2 lg:py-4 flex items-center justify-center text-center flex-wrap gap-x-2 gap-y-2 lg:gap-x-3 lg:gap-y-3 ">
               {backend.map((item, index) => (
@@ -53,7 +53,7 @@ const Skills = () => {
             </div>
           </div>
           {/* Others */}
-          <div className="border-purple-900 lg:w-[35%] px-1 py-2 lg:h-[355px] lg:px-4 lg:py-6 backdrop-blur-lg bg-opacity-20 bg-white text-center rounded-xl shadow-purple-400 shadow-md">
+          <div className="border-purple-900 lg:w-[35%] px-1 py-2 lg:h-[355px] lg:px-4 lg:py-6 backdrop-blur-lg bg-opacity-20 bg-white text-center rounded-xl shadow-purple-400 shadow-md hover:scale-105 transition-transform duration-300">
             <h1 className="text-2xl lg:text-4xl font-semibold ">
               Languages & Tools
             </h1>
