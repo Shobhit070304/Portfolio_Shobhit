@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
 import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +9,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,80 +27,113 @@ const Contact = () => {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully!");
+          toast.success("Message sent successfully!");
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
           console.log("FAILED...", error);
-          alert("Failed to send message. Try again.");
+          toast.error("Failed to send message. Try again.");
         }
       );
   }
+
   return (
-    <section
-      className="min-h-screen py-16 lg:selection flex items-center"
-      id="contact"
-    >
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-center">
-          <motion.div
-            variants={fadeIn("right", 0.3)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex-1"
-          >
+    <section id="contact" className="py-10 md:py-10">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-crimson font-normal text-white mb-6 tracking-tight">
+            Let's Connect
+          </h2>
+          <p className="text-sm font-inter text-white/50 tracking-widest uppercase">
+            Ready to bring your vision to life
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-20">
+          <div className="space-y-12">
             <div>
-              <h4 className="text-xl uppercase text-accent font-medium mb-2 tracking-wide">
-                Get in touch
-              </h4>
-              <h2 className="text-[45px] lg:text-[90px] leading-none mb-12 ">
-                Let's work <br /> together!
-              </h2>
+              <p className="text-lg font-inter text-white/60 leading-relaxed mb-8">
+                Whether you have a project in mind, want to collaborate, or
+                simply wish to connect, I'm always excited to discuss new
+                opportunities and creative challenges.
+              </p>
             </div>
-          </motion.div>
-          <motion.form
-            variants={fadeIn("left", 0.3)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 border rounded-2xl flex flex-col gap-y-4 lg:gap-y-6 pb-6 lg:pb-14 p-6 items-start "
-            onSubmit={handleSubmit}
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              value={formData.name}
-              onChange={(e) => {
-                handleChange(e);
-              }}
-              className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all"
-              required
-            />
-            <input
-              type="text"
-              name="email"
-              placeholder="Your email"
-              value={formData.email}
-              onChange={(e) => {
-                handleChange(e);
-              }}
-              className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all"
-              required
-            />
-            <textarea
-              className="bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none mb-12"
-              name="message"
-              placeholder="Your message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-            <button type="submit" className="btn btn-lg">
-              Send message
+
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <Mail className="w-5 h-5 text-white/40" />
+                <a
+                  href="mailto:shobhit@example.com"
+                  className="text-base font-inter text-white/60 hover:text-white transition-colors duration-300"
+                >
+                  sharmashobhit1000@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-4">
+                <MapPin className="w-5 h-5 text-white/40" />
+                <span className="text-base font-inter text-white/60">
+                  Available for work
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="https://www.linkedin.com/in/shobhit-kumar-sharma-17bb4223a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-inter font-medium text-white/60 hover:text-white transition-colors duration-300 tracking-widest uppercase border-b border-white/20 hover:border-white/60 pb-2"
+              >
+                Connect on LinkedIn
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="space-y-6">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full bg-transparent border-b border-white/20 py-4 text-base font-inter text-white placeholder:text-white/30 focus:border-white/60 focus:outline-none transition-colors duration-300"
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full bg-transparent border-b border-white/20 py-4 text-base font-inter text-white placeholder:text-white/30 focus:border-white/60 focus:outline-none transition-colors duration-300"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={6}
+                className="w-full bg-transparent border-b border-white/20 py-4 text-base font-inter text-white placeholder:text-white/30 focus:border-white/60 focus:outline-none transition-colors duration-300 resize-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="group flex items-center gap-3 text-sm font-inter font-medium text-white/60 hover:text-white transition-colors duration-300 tracking-widest uppercase disabled:opacity-50"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+              {!isSubmitting && (
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+              )}
             </button>
-          </motion.form>
+          </form>
         </div>
       </div>
     </section>

@@ -1,104 +1,142 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const WhiteCubesBackground = () => {
+const TwinklingStarfield = () => {
   const mountRef = useRef(null);
 
   useEffect(() => {
     // Scene setup
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x111118);
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    scene.background = new THREE.Color(0x000000); // Deep cosmic blue
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ 
+      antialias: true,
+      powerPreference: "high-performance",
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.8);
-    scene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(0.5, 0.5, 1);
-    scene.add(directionalLight);
+    // **Star Particles Setup**
+    const starCount = 1000;
+    const positions = new Float32Array(starCount * 3);
+    const sizes = new Float32Array(starCount);
+    const opacities = new Float32Array(starCount);
+    const brightnessSpeeds = new Float32Array(starCount);
+    const colors = new Float32Array(starCount * 3); // RGB for each star
 
-    // Cubes - fewer and whiter
-    const cubes = [];
-    const cubeCount = 20; // Reduced count
+    // **Generate Natural-Looking Stars**
+    for (let i = 0; i < starCount; i++) {
+      // **Position in a spherical distribution**
+      const radius = 100 + Math.random() * 500; // Some stars farther, some closer
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      
+      positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta); // x
+      positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta); // y
+      positions[i * 3 + 2] = radius * Math.cos(phi); // z
 
-    for (let i = 0; i < cubeCount; i++) {
-      const size = 0.8 + Math.random() * 1.2;
-      const geometry = new THREE.BoxGeometry(size, size, size);
+      // **Random sizes (smaller stars appear farther)**
+      sizes[i] = 0.05 + Math.random() * 0.5;
+
+      // **Slight color variations (white, blue, yellow tints)**
+      const colorIntensity = 0.7 + Math.random() * 0.3;
+      const colorVariation = Math.random();
       
-      // Whiter shades (0.7-0.9 gray values)
-      const whiteValue = 0.7 + Math.random() * 0.2;
-      const material = new THREE.MeshLambertMaterial({ 
-        color: new THREE.Color(whiteValue, whiteValue, whiteValue),
-        transparent: true,
-        opacity: 0.9
-      });
-      
-      const cube = new THREE.Mesh(geometry, material);
-      
-      // Full screen coverage (-40 to 40 x position)
-      cube.position.x = (Math.random() - 0.5) * 80;
-      cube.position.y = (Math.random() - 0.5) * 30;
-      cube.position.z = Math.random() * -100;
-      
-      cube.rotation.x = Math.random() * Math.PI;
-      cube.rotation.y = Math.random() * Math.PI;
-      
-      scene.add(cube);
-      cubes.push({
-        mesh: cube,
-        speed: 0.008 + Math.random() * 0.015, // Slow speed
-      });
+      if (colorVariation < 0.7) {
+        // White stars (slightly cool/warm)
+        colors[i * 3] = colorIntensity * (0.9 + Math.random() * 0.1); // R
+        colors[i * 3 + 1] = colorIntensity * (0.9 + Math.random() * 0.1); // G
+        colors[i * 3 + 2] = colorIntensity * (1.0); // B (slightly bluish)
+      } else if (colorVariation < 0.85) {
+        // Blue stars
+        colors[i * 3] = colorIntensity * 0.5; // R
+        colors[i * 3 + 1] = colorIntensity * 0.7; // G
+        colors[i * 3 + 2] = colorIntensity * 1.0; // B
+      } else {
+        // Yellow stars
+        colors[i * 3] = colorIntensity * 1.0; // R
+        colors[i * 3 + 1] = colorIntensity * 0.9; // G
+        colors[i * 3 + 2] = colorIntensity * 0.5; // B
+      }
+
+      // **Initial opacity & pulsing speed**
+      opacities[i] = 0.2 + Math.random() * 0.8;
+      brightnessSpeeds[i] = 0.05 + Math.random() * 0.3;
     }
 
-    camera.position.z = 5;
+    const starsGeometry = new THREE.BufferGeometry();
+    starsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    starsGeometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+    starsGeometry.setAttribute('opacity', new THREE.BufferAttribute(opacities, 1));
+    starsGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Animation
+    const starsMaterial = new THREE.PointsMaterial({
+      size: 1,
+      sizeAttenuation: true,
+      vertexColors: true, // Use per-star colors
+      transparent: true,
+      opacity: 1,
+      blending: THREE.AdditiveBlending,
+    });
+
+    const starfield = new THREE.Points(starsGeometry, starsMaterial);
+    scene.add(starfield);
+
+    // **Camera & subtle parallax effect**
+    camera.position.z = 50;
+
+    // **Animation Loop**
+    const clock = new THREE.Clock();
     const animate = () => {
       requestAnimationFrame(animate);
-      
-      cubes.forEach(cube => {
-        cube.mesh.position.y += cube.speed;
-        cube.mesh.rotation.x += 0.0015;
-        cube.mesh.rotation.y += 0.0015;
-        
-        // Reset with full horizontal coverage
-        if (cube.mesh.position.y > 15) {
-          cube.mesh.position.y = -15;
-          cube.mesh.position.x = (Math.random() - 0.5) * 80;
-          cube.mesh.position.z = Math.random() * -100;
-        }
-      });
-      
+      const elapsedTime = clock.getElapsedTime();
+
+      // **Update star brightness (smooth pulsing)**
+      const opacityAttribute = starsGeometry.attributes.opacity;
+      for (let i = 0; i < starCount; i++) {
+        opacityAttribute.array[i] = 0.3 + Math.sin(elapsedTime * brightnessSpeeds[i]) * 0.7;
+      }
+      opacityAttribute.needsUpdate = true;
+
+      // **Slow camera rotation for depth**
+      camera.rotation.y = elapsedTime * 0.02;
+      camera.rotation.x = elapsedTime * 0.005;
+
       renderer.render(scene, camera);
     };
 
     animate();
 
+    // **Handle window resize**
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
-
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      mountRef.current?.removeChild(renderer.domElement);
+      if (mountRef.current && renderer.domElement) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
     };
   }, []);
 
-  return <div ref={mountRef} style={{ 
-    position: 'fixed', 
-    top: 0, 
-    left: 0, 
-    zIndex: -1, 
-    width: '100%', 
-    height: '100%' 
-  }} />;
+  return (
+    <div 
+      ref={mountRef} 
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: -1,
+        pointerEvents: 'none',
+      }}
+    />
+  );
 };
 
-export default WhiteCubesBackground;
+export default TwinklingStarfield;

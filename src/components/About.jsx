@@ -1,50 +1,71 @@
 import React from "react";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
-import Image from "../assets/characternew.png";
 
 const About = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.5,
-  });
   return (
-    <section className="section" id="about" ref={ref}>
-      <div className="container mx-auto mt-8">
-        <div className="flex flex-col gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0 h-screen">
-          <motion.div
-            variants={fadeIn("right", 0.3)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="hidden flex-1 lg:flex items-center bg-contain bg-no-repeat h-[640px] mix-blend-lighten bg-top"
-          >
-            <img src={Image} alt="" />
-          </motion.div>
-          <motion.div
-            variants={fadeIn("left", 0.5)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.7 }}
-            className="flex-1"
-          >
-            <h2 className="h2 text-accent ">About me.</h2>
-            <h3 className="h3 mb-4">
-              Passionate about building and solving with technology.
-            </h3>
-            <p className="mb-6">
-              👋 Hi, I’m Shobhit, a final-year CS student driven by curiosity
-              and a love for creating. I’m constantly learning, growing, and
-              adapting—whether it’s building web apps, solving complex problems,
-              or exploring new technologies. I enjoy the process as much as the
-              result, and I believe in clean code, big ideas, and consistent
-              effort. Beyond the screen, you’ll find me chatting, walking,
-              gaming, or just enjoying life’s simple moments. I bring energy,
-              creativity, and joy into everything I do—whether it’s coding a new
-              feature or collaborating with a team. Let’s connect and create
-              something impactful, and fun, together! 🚀
-            </p>
-          </motion.div>
+    <section id="about" className="py-32 md:py-40">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-20">
+          <div>
+            <h2 className="text-5xl md:text-7xl font-crimson font-normal text-white mb-12 tracking-tight">
+              About Me
+            </h2>
+            <div className="space-y-6 text-base font-inter text-white/60 leading-relaxed">
+              <p>
+                I'm a final-year Computer Science student with an unwavering
+                passion for creating digital experiences that seamlessly blend
+                form and function. My journey in technology is driven by
+                curiosity and a commitment to craftsmanship.
+              </p>
+              <p>
+                I believe in the power of clean code, thoughtful design, and the
+                endless possibilities that emerge when classical principles meet
+                modern innovation. Every project is an opportunity to push
+                boundaries and create something meaningful.
+              </p>
+              <p>
+                When I'm not immersed in code, you'll find me exploring new
+                technologies, contributing to open source projects, or simply
+                enjoying the quiet moments that fuel creativity.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-sm font-inter font-medium text-white/70 tracking-widest uppercase mb-8">
+                Philosophy
+              </h3>
+              <blockquote className="text-lg font-crimson font-normal text-white/80 italic leading-relaxed border-l-2 border-white/20 pl-6">
+                "Simplicity is the ultimate sophistication. In every line of
+                code, in every design decision, I strive for elegance through
+                restraint."
+              </blockquote>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-inter font-medium text-white/70 tracking-widest uppercase mb-8">
+                Currently
+              </h3>
+              <div className="space-y-4 text-sm font-inter text-white/50">
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span>Learning</span>
+                  <span className="font-mono">AI Integration</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span>Reading</span>
+                  <span className="font-mono">Clean Architecture</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span>Building</span>
+                  <span className="font-mono">AI Saas Applications</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-white/5">
+                  <span>Exploring</span>
+                  <span className="font-mono">Spring boot</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
