@@ -138,12 +138,12 @@ const Work = () => {
   const projects = [
     {
       year: "2025",
-      title: "NoteTube",
+      title: "Concisio",
       description:
         "AI-powered YouTube video summarization platform with instant PDF generation and smart note-taking capabilities.",
       tech: ["React", "Node", "Express", "MongoDB", "Tailwind", "Gemini"],
-      github: "https://github.com/Shobhit070304/NoteTube",
-      demo: "https://notetube-ten.vercel.app/",
+      github: "https://github.com/Shobhit070304/Concisio",
+      demo: "https://concisio.vercel.app",
     },
     {
       year: "2025",
@@ -230,7 +230,6 @@ const Work = () => {
                       Github
                       <Github className="w-5 h-5" />
                     </a>
-                    
                   </div>
                   <a
                     href={project.demo}
