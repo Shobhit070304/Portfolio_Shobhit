@@ -11,21 +11,13 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-base font-inter text-white/60 leading-relaxed">
               <p>
-                I'm a final-year Computer Science student with an unwavering
-                passion for creating digital experiences that seamlessly blend
-                form and function. My journey in technology is driven by
-                curiosity and a commitment to craftsmanship.
+                I'm a final-year Computer Science student who values clean code, clear design, and honest communication. I’m always learning, growing, and looking for smart solutions.
               </p>
               <p>
-                I believe in the power of clean code, thoughtful design, and the
-                endless possibilities that emerge when classical principles meet
-                modern innovation. Every project is an opportunity to push
-                boundaries and create something meaningful.
+                I’m stubborn with challenges—digging deep and not giving up until things work. I believe every project should be both useful and enjoyable.
               </p>
               <p>
-                When I'm not immersed in code, you'll find me exploring new
-                technologies, contributing to open source projects, or simply
-                enjoying the quiet moments that fuel creativity.
+                I like to keep things light, enjoy a good laugh, and love teaming up with others. Outside tech, you’ll find me on walks, having life talks, or playing video games.
               </p>
             </div>
           </div>
@@ -36,9 +28,7 @@ const About = () => {
                 Philosophy
               </h3>
               <blockquote className="text-lg font-crimson font-normal text-white/80 italic leading-relaxed border-l-2 border-white/20 pl-6">
-                "Simplicity is the ultimate sophistication. In every line of
-                code, in every design decision, I strive for elegance through
-                restraint."
+                "I believe the best solutions are simple and elegant. Whether I'm writing code or designing, I always aim for clarity and purpose."
               </blockquote>
             </div>
 
@@ -61,7 +51,7 @@ const About = () => {
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-white/5">
                   <span>Exploring</span>
-                  <span className="font-mono">Spring boot</span>
+                  <span className="font-mono">AWS</span>
                 </div>
               </div>
             </div>

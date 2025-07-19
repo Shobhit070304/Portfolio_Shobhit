@@ -46,26 +46,21 @@ const Hero = () => {
           {/* Main heading */}
           <div className="space-y-3">
             <h1 className="text-4xl md:text-6xl font-crimson font-normal tracking-tight text-white leading-tight">
-              Shobhit Sharma
+              Shobhit Kumar Sharma
             </h1>
-            <div className="text-base md:text-lg font-inter font-light text-white/60 tracking-widest uppercase">
-              <span className="text-gray-300 mr-4">I am a</span>
+            <div className="text-2xl md:text-3xl font-bold text-white mt-2">
               <TypeAnimation
-                sequence={["Developer", 2000, "Programmer", 2000]}
+                sequence={["Developer", 2000, "Programmer", 2000, "Creator", 2000]}
                 speed={50}
-                className="text-white"
+                className="inline"
                 wrapper="span"
                 repeat={Infinity}
               />
             </div>
+            <p className="text-base md:text-lg text-white/70 mt-4">
+              Building elegant solutions for the digital world.
+            </p>
           </div>
-
-          {/* Description */}
-          <p className="text-sm md:text-base text-white/70 max-w-lg mx-auto leading-relaxed font-inter font-light">
-            Crafting digital experiences with precision and elegance.
-            <br />
-            Where classical design meets modern technology.
-          </p>
 
           {/* Actions */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">

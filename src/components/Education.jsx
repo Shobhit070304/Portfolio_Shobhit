@@ -20,13 +20,15 @@ const Education = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <div className="p-2 border border-white/20 bg-white/5">
-                    <Award className="w-5 h-5 text-white/60" />
+                    <Award className="w-5 h-5 text-yellow-400" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-crimson font-normal text-white">
+                    <h3 className="text-xl font-crimson font-bold text-yellow-300 flex items-center gap-2">
                       Bachelors of Technology
+                      <span className="bg-yellow-400/20 text-yellow-300 text-xs font-semibold px-2 py-1 rounded-full ml-2">CSE</span>
                     </h3>
                     <p className="text-sm font-inter text-white/60">Computer Science & Engineering</p>
+                    <p className="text-xs font-inter text-white/40 mt-1">GPA: --/10</p>
                   </div>
                 </div>
 
@@ -69,11 +71,12 @@ const Education = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <div className="p-2 border border-white/20 bg-white/5">
-                    <Code className="w-5 h-5 text-white/60" />
+                    <Code className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-crimson font-normal text-white">
+                    <h3 className="text-xl font-crimson font-bold text-blue-300 flex items-center gap-2">
                       Full Stack Development Web Certification
+                      <span className="bg-blue-400/20 text-blue-300 text-xs font-semibold px-2 py-1 rounded-full ml-2">Web</span>
                     </h3>
                      <p className="text-sm font-inter text-white/60">Apna College</p>
                   </div>
