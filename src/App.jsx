@@ -23,8 +23,8 @@ const App = () => {
       <Hero />
       <About />
       <Skills />
-      <Profiles />
       <Projects />
+      <Profiles />
       <Education />
       <Contact />
     </div>

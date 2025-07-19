@@ -17,7 +17,7 @@ const Education = () => {
           {/* College Education */}
           <div className="group">
             <div className="border border-white/10 bg-white/[0.02] backdrop-blur-sm p-6 hover:bg-white/[0.05] transition-all duration-700">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0">
                 <div className="flex items-center gap-4">
                   <div className="p-2 border border-white/20 bg-white/5">
                     <Award className="w-5 h-5 text-yellow-400" />
@@ -28,11 +28,11 @@ const Education = () => {
                       <span className="bg-yellow-400/20 text-yellow-300 text-xs font-semibold px-2 py-1 rounded-full ml-2">CSE</span>
                     </h3>
                     <p className="text-sm font-inter text-white/60">Computer Science & Engineering</p>
-                    <p className="text-xs font-inter text-white/40 mt-1">GPA: --/10</p>
+
                   </div>
                 </div>
 
-                <div className="text-right">
+                <div className="text-left md:text-right md:items-end mt-4 md:mt-0">
                   <div className="flex items-center gap-2 text-sm font-inter text-white/50 mb-1">
                     <Calendar className="w-4 h-4" />
                     <span>Sep 2021 - May 2025</span>
@@ -68,7 +68,7 @@ const Education = () => {
           {/* Full Stack Project */}
           <div className="group">
             <div className="border border-white/10 bg-white/[0.02] backdrop-blur-sm p-6 hover:bg-white/[0.05] transition-all duration-700">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0">
                 <div className="flex items-center gap-4">
                   <div className="p-2 border border-white/20 bg-white/5">
                     <Code className="w-5 h-5 text-blue-400" />
@@ -78,11 +78,11 @@ const Education = () => {
                       Full Stack Development Web Certification
                       <span className="bg-blue-400/20 text-blue-300 text-xs font-semibold px-2 py-1 rounded-full ml-2">Web</span>
                     </h3>
-                     <p className="text-sm font-inter text-white/60">Apna College</p>
+                    <p className="text-sm font-inter text-white/60">Apna College</p>
                   </div>
                 </div>
 
-                <div className="text-right">
+                <div className="text-left md:text-right md:items-end mt-4 md:mt-0">
                   <div className="flex items-center gap-2 text-sm font-inter text-white/50 mb-1">
                     <Calendar className="w-4 h-4" />
                     <span>Sep 2023 - Jan 2024</span>
@@ -117,8 +117,8 @@ const Education = () => {
                       {tech}
                     </div>
                   ))}
-                </div> 
-               </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
