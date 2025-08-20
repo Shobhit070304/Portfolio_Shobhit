@@ -26,12 +26,12 @@ const Contact = () => {
       )
       .then(
         (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+          // ...existing code...
           toast.success("Message sent successfully!");
           setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
-          console.log("FAILED...", error);
+          // ...existing code...
           toast.error("Failed to send message. Try again.");
         }
       );
