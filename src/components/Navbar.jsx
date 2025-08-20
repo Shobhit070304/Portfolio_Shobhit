@@ -60,7 +60,7 @@ const Navbar = () => {
               className={`font-crimson transition-all duration-700 flex items-center gap-2 ${isScrolled ? "text-sm" : "text-base"
                 } font-medium tracking-tight`}
             >
-              <img src="logo.png" className="w-5" alt="Shobhit Logo" />
+              <img src="logo.png" className="w-5" alt="Shobhit Kumar Sharma, Logo" />
               <span className="text-white/90">Shobhit</span>
             </div>
 

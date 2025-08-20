@@ -2,40 +2,20 @@ import React from "react";
 
 const skillGroups = [
   {
-    title: "Proficient",
-    skills: [
-      "C++",
-      "JavaScript (ES6)",
-      "HTML",
-      "CSS",
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MySQL",
-      "MongoDB",
-      "Git",
-    ],
+    title: "Programming Languages",
+    skills: ["C++", "Python", "JavaScript (ES6)", "SQL", "HTML", "CSS"],
   },
   {
-    title: "Experienced",
-    skills: [
-      "TypeScript",
-      "Tailwind CSS",
-      "Redux.js",
-      "Redis",
-      "Docker",
-      "Postman",
-    ],
+    title: "Frameworks / Libraries:",
+    skills: ["React.js", "Node.js", "Express.js", "EJS", "Tailwind", "Redux"],
   },
   {
-    title: "Familiar",
-    skills: [
-      "AWS (EC2, S3, IAM, Lambda)",
-      "Kafka",
-      "Jest",
-      "Prisma",
-      "Flask",
-    ],
+    title: "Database",
+    skills: ["MySQL", "MongoDB", "Redis"],
+  },
+  {
+    title: "Tools & Platforms",
+    skills: ["AWS EC2", "Docker", "n8n", "Postman", "Git", "GitHub"],
   },
 ];
 
@@ -51,7 +31,7 @@ const Skills = () => {
             Technologies I work with
           </p>
         </div>
-        <div className="max-w-4xl mx-auto flex flex-col gap-10">
+        <div className="max-w-4xl mx-auto flex flex-col gap-6">
           {skillGroups.map((group, idx) => (
             <div key={group.title}>
               <h3 className="text-lg md:text-xl font-semibold text-white mb-4">

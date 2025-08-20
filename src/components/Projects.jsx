@@ -6,7 +6,7 @@ const Work = () => {
       year: "2025",
       title: "Voltspot",
       description:
-        "Comprehensive EV charging station locator with real-time availability, route planning, and user reviews.",
+        "Voltspot is an EV charging station locator. Its purpose is to simplify discovery with an interactive map and real-time filters for 100+ stations, providing users a seamless way to find nearby charging points quickly and reliably.",
       tech: ["React", "Node", "Express", "MongoDB", "Tailwind", "Maps API"],
       github: "https://github.com/Shobhit070304/VoltSpot",
       demo: "https://voltspot.vercel.app",
@@ -14,9 +14,19 @@ const Work = () => {
     },
     {
       year: "2025",
+      title: "Concisio",
+      description:
+        "Concisio is an AI-powered summarization tool. Its aim is to instantly distill key insights from documents and videos using advanced LLM APIs, offering users fast, flexible results and PDF export to boost productivity.",
+      tech: ["React", "Node", "Express", "MongoDB", "Tailwind", "Gemini"],
+      github: "https://github.com/Shobhit070304/Concisio",
+      demo: "https://concisio.vercel.app",
+      featured: true,
+    },
+    {
+      year: "2025",
       title: "Linkly",
       description:
-        "Advanced URL shortening service with custom aliases, analytics dashboard, and QR code generation.",
+        "Linkly is a fast and user-friendly URL shortener with real-time tracking and smart controls. Built for efficiency and clarity, it offers custom links, expiry settings, and secure logins—making link management simple, reliable, and powerful.",
       tech: [
         "React",
         "Node",
@@ -30,16 +40,6 @@ const Work = () => {
       demo: "https://linkly-topaz.vercel.app/",
       featured: true,
     },
-    {
-      year: "2025",
-      title: "Concisio",
-      description:
-        "AI-powered YouTube video summarization platform with instant PDF generation and smart note-taking capabilities.",
-      tech: ["React", "Node", "Express", "MongoDB", "Tailwind", "Gemini"],
-      github: "https://github.com/Shobhit070304/Concisio",
-      demo: "https://concisio.vercel.app",
-      featured: true,
-    }
   ];
 
   return (
@@ -66,7 +66,9 @@ const Work = () => {
                     {project.year}
                   </span>
                   {project.featured && (
-                    <span className="inline-block text-black text-sm py-1 text-center rounded-full font-semibold mt-2 bg-yellow-300">Featured</span>
+                    <span className="inline-block text-black text-sm py-1 text-center rounded-full font-semibold mt-2 bg-yellow-300">
+                      Featured
+                    </span>
                   )}
                 </div>
 
@@ -107,7 +109,7 @@ const Work = () => {
                     rel="noopener noreferrer"
                     className="group/link flex items-center gap-2 text-xs font-inter font-medium text-white/60 hover:text-white transition-colors duration-300 tracking-widest uppercase"
                   >
-                    View Project
+                    Live
                     <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform duration-300" />
                   </a>
                 </div>
