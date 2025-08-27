@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Resume from "../assets/Resume_Shobhit.pdf";
-
-import { useState, useEffect } from "react";
 import { ArrowUpRight, Github, Linkedin } from "lucide-react";
+import "./HeroGate.css";
 
 const Hero = () => {
-  const [mounted, setMounted] = useState(false);
-  const [currentRole, setCurrentRole] = useState(0);
-  const roles = ["Developer", "Programmer", "Creator"];
 
+  // Gate animation state
+  const [gateOpen, setGateOpen] = useState(false);
+  const [gateHide, setGateHide] = useState(false);
   useEffect(() => {
-    setMounted(true);
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [roles.length]);
+    // Start gate animation after a longer pause for dramatic effect
+    const openTimer = setTimeout(() => {
+      setGateOpen(true);
+      // Hide the gate overlay after animation completes (match CSS duration)
+      setTimeout(() => setGateHide(true), 3200);
+    }, 1200); // Longer pause before opening
+    return () => {
+      clearTimeout(openTimer);
+    };
+  }, []);
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -37,12 +40,29 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden mt-6"
     >
-      <div className="max-w-3xl mx-auto px-6 text-center">
-        <div
-          className={`space-y-8 transition-all duration-1000 ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
+
+      {/* Gate Animation Overlay */}
+      {!gateHide && (
+        <div className={`hero-gate-container${gateOpen ? " hide" : ""}`}>
+          <div className={`hero-gate top${gateOpen ? " open" : ""}`}>
+            <div className="hero-gate-line"></div>
+          </div>
+          <div className={`hero-gate bottom${gateOpen ? " open" : ""}`}>
+            <div className="hero-gate-line"></div>
+          </div>
+        </div>
+      )}
+
+      {/* Hero Content, scale and fade in after gate opens */}
+      <div
+        className={`max-w-3xl mx-auto px-6 text-center transition-all duration-[1300ms] ${gateOpen ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+        style={{
+          transitionProperty: "opacity, transform",
+          transitionTimingFunction: "cubic-bezier(0.77,0,0.175,1)",
+          transitionDelay: gateOpen ? "1.7s" : "0s"
+        }}
+      >
+        <div className="space-y-8">
           {/* Main heading */}
           <div className="space-y-3">
             <h1 className="text-4xl md:text-6xl font-crimson font-normal tracking-tight text-white leading-tight">

@@ -19,7 +19,7 @@ const TwinklingStarfield = () => {
     mountRef.current.appendChild(renderer.domElement);
 
     // Star Particles Setup
-    const starCount = 1000;
+    const starCount = 200;
     const positions = new Float32Array(starCount * 3);
     const sizes = new Float32Array(starCount);
     const opacities = new Float32Array(starCount);

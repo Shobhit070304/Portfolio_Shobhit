@@ -37,7 +37,7 @@ const Work = () => {
         "Tailwind",
       ],
       github: "https://github.com/Shobhit070304/Linkly",
-      demo: "https://linkly-topaz.vercel.app/",
+      demo: "https://linkly1.vercel.app/",
       featured: true,
     },
   ];

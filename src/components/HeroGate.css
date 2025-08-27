@@ -1,0 +1,72 @@
+/* Gate opening animation for Hero section */
+
+.hero-gate-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  .hero-gate-container {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+    background: #000;
+    transition: opacity 1.5s cubic-bezier(0.77,0,0.175,1);
+    will-change: opacity;
+  }
+  .hero-gate-container.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s cubic-bezier(0.77,0,0.175,1);
+  }
+  .hero-gate {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #000;
+    transition: transform 2.8s cubic-bezier(0.77,0,0.175,1);
+    z-index: 1001;
+    box-shadow: 0 12px 48px 0 rgba(0,0,0,0.85);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    will-change: transform;
+    overflow: hidden;
+  }
+  .hero-gate.top {
+    top: 0;
+    transform: translateY(0);
+  }
+  .hero-gate.bottom {
+    bottom: 0;
+    transform: translateY(0);
+    align-items: flex-start;
+  }
+  .hero-gate.open.top {
+    transform: translateY(-100%);
+  }
+  .hero-gate.open.bottom {
+    transform: translateY(100%);
+  }
+
+  /* Animated white lines - professional look */
+  .hero-gate-line {
+    width: 100vw;
+    height: 3.5px;
+    background: linear-gradient(90deg,rgba(255,255,255,0.0) 0%,#fff 40%,#fff 60%,rgba(255,255,255,0.0) 100%);
+    opacity: 1;
+    filter: blur(0.5px) drop-shadow(0 0 8px #fff8);
+    box-shadow: 0 0 24px 0 #fff4;
+    transition: opacity 2.2s cubic-bezier(0.77,0,0.175,1);
+    will-change: opacity;
+  }
+  @media (max-width: 600px) {
+    .hero-gate-line {
+      height: 2px;
+    }
+  }
+  .hero-gate.open .hero-gate-line {
+    opacity: 0;
+  }
+}
