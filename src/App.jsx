@@ -1,4 +1,6 @@
 import React from "react";
+import LocomotiveScroll from "locomotive-scroll";
+import { Toaster } from "react-hot-toast";
 
 const Navbar = React.lazy(() => import("./components/Navbar"));
 const Hero = React.lazy(() => import("./components/Hero"));
@@ -9,8 +11,6 @@ const Projects = React.lazy(() => import("./components/Projects"));
 const Education = React.lazy(() => import("./components/Education"));
 const Contact = React.lazy(() => import("./components/Contact"));
 const Background = React.lazy(() => import("./components/Background"));
-import LocomotiveScroll from "locomotive-scroll";
-import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
